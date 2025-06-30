@@ -1,0 +1,28 @@
+﻿@model IEnumerable<MiniMVC.Models.User>
+
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
+
+        <h1 class="mb-4">MiniMVC Projesine Hoşgeldiniz!</h1>
+
+        <div class="btn-group-vertical" role="group" aria-label="Ana Menü">
+
+            <a asp-action="Goruntule" asp-controller="User" class="btn btn-warning btn-md mb-3 px-5">
+                Kullanıcıları Görüntüle
+            </a>
+
+            <div class="container text-center ">
+                <a asp-action="Create" asp-controller="User" class="btn btn-success col">
+                    Kayıt Ol
+                </a>
+
+                <a asp-action="Login" asp-controller="User" class="btn btn-success col">
+                    Giriş Yap
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+

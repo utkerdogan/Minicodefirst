@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "MiniMVC Ana Sayfa";
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
+
+        <h1 class="mb-4">MiniMVC Projesine Hoşgeldiniz!</h1>
+
+        <div class="btn-group-vertical" role="group" aria-label="Ana Menü">
+
+            <a asp-controller="Author" asp-action="Index" class="btn btn-success btn-lg mb-3 px-5">
+                Yazarlar
+            </a>
+
+            <a asp-controller="Book" asp-action="Index" class="btn btn-warning btn-lg mb-3 px-5">
+                Kitaplar
+            </a>
+
+            <a asp-controller="User" asp-action="Index" class="btn btn-primary btn-lg mb-3 px-5">
+                Kullanıcılar
+            </a>
+        </div>
+
+    </div>
+</div>

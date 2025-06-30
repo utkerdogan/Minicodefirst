@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MiniMVC.Models.ViewModel.BookViewModel>
+
+<h3>Ödünç Aldığım Kitaplar</h3>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Henüz ödünç aldığınız kitap bulunmamaktadır.
+    </div>
+}
+else
+{
+    <table class="table table-bordered table-light table-stripped mt-3">
+        <thead>
+            <tr>
+                <th>Başlık</th>
+                <th>Yıl</th>
+                <th>Yazar</th>
+                <th>Tür</th>
+                <th>İşlem</th>
+            </tr>
+        </thead>
+        <tbody class="align-middle">
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Year</td>
+                    <td>@book.AuthorName</td>
+                    <td>@book.GenreName</td>
+                    <td>
+                        <form asp-action="Return" asp-controller="BorrowedBook" method="post">
+                            <input type="hidden" name="bookId" value="@book.BookId" />
+                            <input type="hidden" name="userId" value="@ViewBag.UserId" />
+                            <button type="submit" class="btn btn-danger btn-sm">Geri Ver</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div class="row mt-3">
+    <div class="col-md-12">
+        <a asp-action="Index" asp-controller="BorrowedBook" asp-route-userId="@ViewBag.UserId" class="btn btn-success">
+            Geri Dön
+        </a>
+    </div>
+</div>
